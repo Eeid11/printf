@@ -38,4 +38,4 @@ int (*get_function(const char *specifier))(va_list)
 	}
 
 	return (NULL);
-}}
+}
