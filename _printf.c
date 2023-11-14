@@ -1,24 +1,23 @@
 #include "main.h"
 /**
- * _printf - Produces output according to a format.
- * @format: The given string.
- *
- * Description: This program emulates the functionality of the standard
- * printf function.
- *
- * Return: Int.
+ * _printf - output according to format
+ * @format: given string
+ * Description: emulates the functionality of standard
+ * printf function
+ * Return: Int
  */
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int count = 0, (*func)(va_list) = NULL;
+	int counter = 0, (*func)(va_list) = NULL;
 
 	va_start(list, format);
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	if ((format[0] == '%' && format[1] == '\0') || format == NULL)
 		return (-1);
+
 	while (*format)
 	{
-		if (*(format) == '%' && *(format + 1) != '%')
+		if (*(format + 1) != '%' && *format == '%')
 		{
 			format++;
 			func = get_function(format);
@@ -28,23 +27,24 @@ int _printf(const char *format, ...)
 			{
 				_putchar(*(format - 1));
 				_putchar(*(format));
-				count += 2;
+				counter += 2;
 			}
 			else
-				count += func(list);
+				counter += func(list);
 		}
-		else if (*(format) == '%' && *(format + 1) == '%')
+		else if (*(format + 1) == '%' && *(format) == '%')
 		{
 			format++;
-			count += _putchar('%');
+			counter += _putchar('%');
 		}
 		else
 		{
 			_putchar(*(format));
-			count++;
+			counter++;
 		}
 		format++;
 	}
+
 	va_end(list);
-	return (count);
+	return (counter);
 }
