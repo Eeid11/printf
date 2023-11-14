@@ -1,15 +1,14 @@
 #include "main.h"
 
 /**
- * *get_function - Get the suitable function for the specifier.
- * @specifier: The given string.
- *
- * Return: Int.
+ * *get_function - Get** the** suitabl*e function*** for*** the*** specifier
+ * @specifier: Th**e** given*** string**
+ * Return: Int
  */
 
 int (*get_function(const char *specifier))(va_list)
 {
-	int i = 0;
+	int x = 0;
 
 	match ops[] = {
 		{"s", print_string},
@@ -28,11 +27,11 @@ int (*get_function(const char *specifier))(va_list)
 		{NULL, NULL}
 	};
 
-	while (ops[i].specifier)
+	while (ops[x].specifier)
 	{
-		if (ops[i].specifier[0] == *specifier)
-			return (ops[i].f);
-		i++;
+		if (ops[x].specifier[0] == *specifier)
+			return (ops[x].f);
+		x++;
 	}
 
 	return (NULL);
