@@ -1,38 +1,38 @@
 #include "main.h"
 
 /**
- * print_exc_string - prints exclusive string
+ * print_exc_string - print string
  * @list: value
- * Return: number of characters printed
+ * Return: print the number of characters
  */
 
 int print_exc_string(va_list list)
 {
-	char *s;
-	int i, len = 0;
-	int value;
+	char *x;
+	int y, len = 0;
+	int val;
 
-	s = va_arg(list, char *);
-	if (s == NULL)
-		s = "(null)";
-	for (i = 0; s[i] != '\0'; i++)
+	x = va_arg(list, char *);
+	if (x == NULL)
+		x = "(null)";
+	for (y = 0; x[y] != '\0'; y++)
 	{
-		if (s[i] < 32 || s[i] >= 127)
+		if (x[y] < 32 || x[y] >= 127)
 		{
 			_putchar('\\');
 			_putchar('x');
 			len = len + 2;
-			value = s[i];
-			if (value < 16)
+			val = x[y];
+			if (val < 16)
 			{
 				_putchar('0');
 				len++;
 			}
-			len = len + print_HEX(value);
+			len = len + print_HEX(val);
 		}
 		else
 		{
-			_putchar(s[i]);
+			_putchar(x[y]);
 			len++;
 		}
 	}
