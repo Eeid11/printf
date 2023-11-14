@@ -44,7 +44,7 @@ int print_pointer(va_list list);
 int print_rev(va_list list);
 int print_rot(va_list args);
 
-int (*get_function(const char *specifier))(va_list);
+int (*get_function(const char *specifi))(va_list);
 int _printf(const char *format, ...);
 
 #endif /* MAIN */
