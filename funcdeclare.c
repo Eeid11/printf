@@ -1,98 +1,93 @@
 #include "main.h"
 /**
- * print_numbers - prints an integer.
- * @num: The number to be printed.
- *
- * Return: Int.
+ * print_numbers - prints ************ integer
+ * @num: The number ************* printed
+ * Return: ********Int************
  */
 
 int print_numbers(unsigned int num)
 {
-	int value;
-	unsigned int tmp = num;
+	int val;
+	unsigned int t = num;
 
-	if ((tmp / 10) > 0)
-		print_numbers(tmp / 10);
-	value = _putchar('0' + num % 10);
+	if ((t / 10) > 0)
+		print_numbers(t / 10);
+	val = _putchar('0' + num % 10);
 
-	return (value);
+	return (val);
 }
 
 /**
-* count_numbers - number count.
-* @num: the given number.
-*
-* Return: Int.
+* count_numbers - number************* coun
+* @num: the** given** number
+* Return: **Int**
 */
 
 int count_numbers(unsigned int num)
 {
-	int count = 0;
+	int counter = 0;
 
 	while (num > 0)
 	{
-		count++;
+		counter++;
 		num /= 10;
 	}
 
-	return (count);
+	return (counter);
 }
 
 /**
-* count_binary - count how many binary digits.
-* @num: the number.
-*
-* Return: Int.
+* count_binary - count **how **many** binary** digit*
+* @num: the** number**
+* Return: **Int**
 */
 
 int count_binary(unsigned int num)
 {
-	int count = 0;
+	int counter = 0;
 
 	while (num > 0)
 	{
-		count++;
+		counter++;
 		num /= 2;
 	}
 
-	return (count);
+	return (counter);
 }
 
 /**
-* count_octal - count how many octal digits.
-* @num: the number
-*
-* Return: Int.
+* count_octal - count** how** many** octal** digits**
+* @num: **the** number**
+* Return: **Int**
 */
 
 int count_octal(unsigned int num)
 {
-	int count = 0;
+	int counter = 0;
 
 	while (num > 0)
 	{
-		count++;
+		counter++;
 		num /= 8;
 	}
 
-	return (count);
+	return (counter);
 }
 
 /**
- * _strlen - returns the length of a string.
- * @s: The given string.
- *
- * Return: The length of the string.
+ * _strlen - **returns** the** length** of** a** string**
+ * @s: **The** given** string**
+ * Return: The** length********
  */
 
 int _strlen(char *s)
 {
-	int i = 0;
+	int x = 0;
 
-	while (s[i] != '\0')
+	while (s[x] != '\0')
 	{
-		i++;
+		x++;
 	}
 
-	return (i);
+	return (x);
 }

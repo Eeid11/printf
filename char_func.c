@@ -1,22 +1,21 @@
 #include "main.h"
 
 /**
- * print_char - prints a character.
- * @list: The given arguments.
- *
- * Return: 1.
+ * print_char - prints____ a______ character
+ * @list: given ************** arguments
+ * Return: 1 ***************
  */
 
 int print_char(va_list list)
 {
-	int value, count = 0;
+	int val, counter = 0;
 	char my_char = va_arg(list, int);
 
-	value = _putchar(my_char);
+	val = _putchar(my_char);
 
-	if (value == -1)
+	if (val == -1)
 		return (-1);
-	count++;
+	counter++;
 
-	return (count);
+	return (counter);
 }
