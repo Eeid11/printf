@@ -1,15 +1,14 @@
 #include "main.h"
 
 /**
- * print_octal - converts decimal to octal.
- * @list: The given arguments.
- *
- * Return: Int.
+ * print_octal - ***converts****. decimal*** to octa**
+ * @list: The **given **arguments***
+ * Return: **Int***
  */
 
 int print_octal(va_list list)
 {
-	int i, value, count = 0;
+	int x, val, counter = 0;
 	unsigned int reminder, n = va_arg(list, unsigned int);
 	char *str;
 
@@ -18,21 +17,21 @@ int print_octal(va_list list)
 		_putchar('0' + 0);
 		return (1);
 	}
-	count += count_octal(n);
-	str = malloc(sizeof(char) * (count + 1));
+	counter += count_octal(n);
+	str = malloc(sizeof(char) * (counter + 1));
 
 	if (str == NULL)
 		return (-1);
-	for (i = 1; i < count + 1; i++)
+	for (x = 1; x < counter + 1; x++)
 	{
 		reminder = n % 8;
 		n = n / 8;
-		str[count - i] = reminder + '0';
+		str[counter - x] = reminder + '0';
 	}
-	for (i = 0; i < count; i++)
+	for (x = 0; x < counter; x++)
 	{
-		value = _putchar(str[i]);
-		if (value == -1)
+		val = _putchar(str[x]);
+		if (val == -1)
 		{
 			free(str);
 			return (-1);
@@ -40,5 +39,5 @@ int print_octal(va_list list)
 	}
 	free(str);
 
-	return (count);
+	return (counter);
 }

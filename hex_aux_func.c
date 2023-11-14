@@ -2,16 +2,16 @@
 
 
 /**
- * print_hex_ext  - converts to hex
- * @num: value  containing the arguments
- * Return: counter
+ * print_hex_ext  - converts*** to ***********hex
+ * @num: ***************value ** containing **the arguments
+ * Return: counter**
  */
 
 int print_hex_ext(unsigned long int num)
 {
-	long int i, counter = 0;
+	long int x, counter = 0;
 	long int *array;
-	unsigned long int ten = num;
+	unsigned long int t = num;
 
 	while (num / 16 != 0)
 	{
@@ -22,19 +22,19 @@ int print_hex_ext(unsigned long int num)
 
 	array = malloc(sizeof(long int) * counter);
 
-	for (i = 0; i < counter; i++)
+	for (x = 0; x < counter; x++)
 	{
-		array[i] = ten % 16;
-		ten /= 16;
+		array[x] = t % 16;
+		t /= 16;
 	}
 
-	for (i = counter - 1; i >= 0; i--)
+	for (x = counter - 1; x >= 0; x--)
 	{
-		if (array[i] > 9)
+		if (array[x] > 9)
 		{
-			array[i] = array[i] + 39;
+			array[x] = array[x] + 39;
 		}
-		_putchar(array[i] + '0');
+		_putchar(array[x] + '0');
 	}
 
 	free(array);

@@ -1,17 +1,16 @@
 #include "main.h"
 
 /**
- * print_HEX - converts to hex.
- * @num: The value containing the arguments.
- *
- * Return: Int.
+ * print_HEX - ***converts** to **hex**
+ * @num: The //value** containing **the **arguments**
+ * Return: ---- Int+++++
  */
 
 int print_HEX(unsigned int num)
 {
-	int i, counter = 0;
+	int x, counter = 0;
 	int *array;
-	unsigned int ten = num;
+	unsigned int t = num;
 
 	while (num / 16 != 0)
 	{
@@ -22,16 +21,16 @@ int print_HEX(unsigned int num)
 
 	array = malloc(sizeof(int) * counter);
 
-	for (i = 0; i < counter; i++)
+	for (x = 0; x < counter; x++)
 	{
-		array[i] = ten % 16;
-		ten /= 16;
+		array[x] = t % 16;
+		t /= 16;
 	}
-	for (i = counter - 1; i >= 0; i--)
+	for (x = counter - 1; x >= 0; x--)
 	{
-		if (array[i] > 9)
-			array[i] = array[i] + 7;
-		_putchar(array[i] + '0');
+		if (array[x] > 9)
+			array[x] = array[x] + 7;
+		_putchar(array[x] + '0');
 	}
 	free(array);
 	return (counter);

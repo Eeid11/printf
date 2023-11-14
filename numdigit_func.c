@@ -1,40 +1,39 @@
 #include "main.h"
 
 /**
- * print_digit - prints digits.
- * @list: The given arguments.
- *
- * Return: Int.
+ * print_digit - --prints-- **digits**
+ * @list: The---- given**** arguments***-
+ * Return: Int**-*-
  */
 
 int print_digit(va_list list)
 {
-	int count = 0, value, n = va_arg(list, int);
-	unsigned int tmp;
+	int counter = 0, val, n = va_arg(list, int);
+	unsigned int t;
 
 	if (n < 0)
 	{
-		value = _putchar('-');
-		if (value == -1)
+		val = _putchar('-');
+		if (val == -1)
 			return (-1);
-		count += 1;
-		tmp = -n;
+		counter += 1;
+		t = -n;
 	}
 	else if (n == 0)
 	{
-		value = _putchar('0');
-		if (value == 1)
+		val = _putchar('0');
+		if (val == 1)
 			return (1);
 		return (-1);
 	}
 	else
-		tmp = n;
-	value = print_numbers(tmp);
+		t = n;
+	val = print_numbers(t);
 
-	if (value == 1)
-		count += count_numbers(tmp);
+	if (val == 1)
+		counter += count_numbers(t);
 	else
-		count = -1;
+		counter = -1;
 
-	return (count);
+	return (counter);
 }
