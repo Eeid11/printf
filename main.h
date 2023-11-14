@@ -1,11 +1,12 @@
-#ifndef MAIN_H
-#define MAIN_H
+Main.h
+
+#ifndef _MAIN_
+#define _MAIN_
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
-
 
 /**
  * struct format - Struct type.
@@ -19,9 +20,6 @@ typedef struct format
 	char *specifier;
 	int (*f)(va_list);
 } match;
-
-
-
 
 int _putchar(char c);
 int _strlen(char *s);
@@ -40,12 +38,13 @@ int print_X(va_list list);
 int print_HEX(unsigned int num);
 int print_hex_ext(unsigned long int num);
 int print_exc_string(va_list list);
+void print_p_helper(unsigned long ptr, int *count);
 int print_pointer(va_list list);
 int print_rev(va_list list);
 int print_rot(va_list args);
 
-int (*get_function(const char *specifi))(va_list);
+int (*get_function(const char *specifier))(va_list);
 int _printf(const char *format, ...);
 
-#endif /* MAIN */
+#endif /* _MAIN_ */
 

@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * print_digit - print
- * @list: given arguments
- * Return: Int
+ * print_digit - prints digits.
+ * @list: The given arguments.
+ *
+ * Return: Int.
  */
 
 int print_digit(va_list list)
@@ -36,4 +37,4 @@ int print_digit(va_list list)
 		count = -1;
 
 	return (count);
-} 
+}

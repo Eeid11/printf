@@ -1,96 +1,98 @@
 #include "main.h"
 /**
- * print_numbers - print int
- * @number: number to print
- * Return: Int
+ * print_numbers - prints an integer.
+ * @num: The number to be printed.
+ *
+ * Return: Int.
  */
 
-int print_numbers(unsigned int number)
+int print_numbers(unsigned int num)
 {
-	int val;
-	unsigned int t = n;
+	int value;
+	unsigned int tmp = num;
 
-	if ((t / 10) > 0)
-		print_numbers(t / 10);
-	val = _putchar('0' + n % 10);
+	if ((tmp / 10) > 0)
+		print_numbers(tmp / 10);
+	value = _putchar('0' + num % 10);
 
-	return (val);
+	return (value);
 }
 
 /**
-* count_numbers - number count
-* @number: given num
+* count_numbers - number count.
+* @num: the given number.
 *
-* Return: Int
+* Return: Int.
 */
 
-int count_numbers(unsigned int number)
+int count_numbers(unsigned int num)
 {
-	int counter = 0;
+	int count = 0;
 
-	while (number > 0)
+	while (num > 0)
 	{
-		counter++;
-		number /= 10;
+		count++;
+		num /= 10;
 	}
 
-	return (counter);
+	return (count);
 }
 
 /**
-* count_binary - count binary digits
-* @number: number
-* Return: Int
+* count_binary - count how many binary digits.
+* @num: the number.
+*
+* Return: Int.
 */
 
-int count_binary(unsigned int number)
+int count_binary(unsigned int num)
 {
-	int counter = 0;
+	int count = 0;
 
-	while (number > 0)
+	while (num > 0)
 	{
-		counter++;
-		number /= 2;
+		count++;
+		num /= 2;
 	}
 
-	return (counter);
+	return (count);
 }
 
 /**
-* count_octal - count octal digits
-* @number: number
-* Return: Int
+* count_octal - count how many octal digits.
+* @num: the number
+*
+* Return: Int.
 */
 
-int count_octal(unsigned int number)
+int count_octal(unsigned int num)
 {
-	int counter = 0;
+	int count = 0;
 
-
-	while (number > 0)
+	while (num > 0)
 	{
-		counter++;
-		number /= 8;
+		count++;
+		num /= 8;
 	}
 
-	return (counter);
+	return (count);
 }
 
 /**
- * _strlen - returns the leng
- * @st: The string
- * Return: length string
+ * _strlen - returns the length of a string.
+ * @s: The given string.
+ *
+ * Return: The length of the string.
  */
 
-int _strlen(char *st)
+int _strlen(char *s)
 {
-	int x = 0;
+	int i = 0;
 
-
-	while (st[x] != '\0')
+	while (s[i] != '\0')
 	{
-		x++;
+		i++;
 	}
 
-	return (x);
+	return (i);
 }

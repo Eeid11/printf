@@ -1,52 +1,50 @@
 #include "main.h"
-
 /**
- * _printf - output according to type of var
- * @format: input type
+ * _printf - Produces output according to a format.
+ * @format: The given string.
+ *
+ * Description: This program emulates the functionality of the standard
+ * printf function.
  *
  * Return: Int.
  */
-
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int counter = 0;
-	int (*func)(va_list) = NULL;
+	int count = 0, (*func)(va_list) = NULL;
 
 	va_start(list, format);
-	if ((format[0] == '%' && format[1] == '\0') || format == NULL)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-
 	while (*format)
 	{
-		if (*(format + 1) != '%' && *format == '%')
+		if (*(format) == '%' && *(format + 1) != '%')
 		{
 			format++;
 			func = get_function(format);
-			if (*format == '\0')
+			if (*(format) == '\0')
 				return (-1);
 			else if (func == NULL)
 			{
 				_putchar(*(format - 1));
-				_putchar(*format);
-				counter += 2;
+				_putchar(*(format));
+				count += 2;
 			}
 			else
-				counter += func(list);
+				count += func(list);
 		}
-		else if (*format == '%' && *(format + 1) == '%')
+		else if (*(format) == '%' && *(format + 1) == '%')
 		{
 			format++;
-			_putchar('%');
-			counter++;
+			count += _putchar('%');
 		}
 		else
 		{
-			_putchar(*format);
-			counter++;
+			_putchar(*(format));
+			count++;
 		}
 		format++;
 	}
 	va_end(list);
-	return (counter);
+	return (count);
 }
